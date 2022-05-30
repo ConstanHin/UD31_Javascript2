@@ -1,0 +1,15 @@
+{
+    "workbench.colorCustomizations": {
+        "editor.background": "#eAe7e3",
+        "tab.activeBackground": "#c5d6cf",
+        "tab.activeForeground": "#003000",
+        "tab.inactiveForeground": "#000",
+        "panel.background": "#dcc",
+        "sideBar.background": "#e2dfda",
+        "gitDecoration.modifiedResourceForeground": "#a56300",
+        "terminal.ansiBrightYellow": "#915e00",
+        "activityBar.background": "#570847",
+        "titleBar.activeBackground": "#7A0B63",
+        "titleBar.activeForeground": "#FFFBFE"
+    }
+}
