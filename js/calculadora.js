@@ -2,22 +2,14 @@
 // Calculadora simple
 
 // Variables
-let num1 = 0;
-let num2 = 0;
+let num1 = "";
+let num2 = "";
+let result = "";
 let operador = "";
 let fase = 1;
-let result = 0;
 const regexOperador = /[*+-]/;
 
-// Estado inicial 
-function setEstadoInicial() {
-    num1 = 0;
-    num2 = 0;
-    result = 0;
-    let operador = "";
-    display.innerHTML = "0";
-    fase = 1;
-}
+
 
 // Obtener el display o pantalla
 const display = document.getElementById("calc-display");
@@ -28,6 +20,16 @@ const botones = document.querySelectorAll(".calc-btn");
 
 for (let i = 0; i < botones.length; i++) {
     botones[i].onclick = clickedBtn;
+}
+
+// Estado inicial 
+function setEstadoInicial() {
+    num1 = "";
+    num2 = "";
+    result = "";
+    let operador = "";
+    display.innerHTML = "0";
+    fase = 1;
 }
 
 setEstadoInicial();
@@ -71,7 +73,7 @@ function clickedBtn() {
 
 
 /**
- * Method numero
+ * Method listener boton numero
  */
 function calcNum(btn) {
     const numText = btn.innerText;
@@ -82,14 +84,13 @@ function calcNum(btn) {
 
     display.innerText += numText;
     if (fase === 1) {
-        num1 = Number.parseFloat(display.innerText);
+        num1 += numText;
+
 
     } else {
-        const regex = /(?!\D)\d*/g;
-        const arr = display.innerText.match(regex);
-        num2 = Number.parseFloat(arr[1]);
-        console.log(num2, ",num2");
-
+        // const regex = /(?!\D)\d*/g;
+        // const arr = display.innerText.match(regex);
+        num2 += numText;
     }
 }
 
@@ -100,6 +101,9 @@ function calcNum(btn) {
 function igualBtn() {
     // Ejecutar la operación
     // Mostrar el resultado por display
+
+    num1 = Number.parseFloat(num1);
+    num2 = Number.parseFloat(num2);
 
     const matched = display.innerText.match(regexOperador);
 
@@ -122,6 +126,9 @@ function igualBtn() {
     display.innerText = result;
 
     num1 = result;
+    num2 = "";
+
+    console.log(num1, num2, result);
 
 }
 
@@ -155,13 +162,14 @@ function operadorBtn(btn) {
 function puntoBtn() {
     const regex = /(?!\D)\d*/g;
     const arr = display.innerText.match(regex);
-    console.log(arr);
-    if (fase === 1 && display.innerText.includes(".")) {
-        console.log("fase1");
-    } else if (fase === 2 && arr[1].includes(".")) {
-        console.log("fase2");
 
-    } else {
+    if (fase === 1 && !num1.includes(".")) {
+        num1 += ".";
         display.innerText += ".";
+
+    } else if (fase === 2 && !num2.includes(".")) {
+        num2 += ".";
+        display.innerText += ".";
+
     }
 }
