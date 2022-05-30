@@ -48,3 +48,28 @@ main {
     border-radius: 5px;
     padding: 1rem;
 }
+
+/* Ej 13 */
+table {
+    box-shadow: 1px 1px 5px #3333;
+    background-color: #F4E9E9;
+}
+
+table,
+td {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+
+#eventParr p {
+    background-color: #fdfdfd;
+    padding: 10px;
+    font-size: large;
+    user-select: none;
+}
+
+#display {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
