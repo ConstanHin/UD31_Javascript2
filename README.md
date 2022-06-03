@@ -17,3 +17,11 @@ https://constanhin.github.io/UD31_Javascript2/
 ## 14 Calculadora
 
 ![image](https://user-images.githubusercontent.com/67373492/171056927-e3e60c05-cf9e-4dbe-814a-46dd779d6965.png)
+
+## 15 Visor de imágenes
+
+![image](https://user-images.githubusercontent.com/67373492/171917112-3d4b832a-7531-4927-b93b-2bc5dc9a7abc.png)
+
+## 16 Reloj
+
+![image](https://user-images.githubusercontent.com/67373492/171917153-9a907e0f-bd87-4576-9e04-d1c040fb2a3a.png)
